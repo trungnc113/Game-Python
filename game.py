@@ -4,7 +4,7 @@ from setting import *
 from sprites import *
 class Game:
     def __init__(self):
-        pygame.init()
+        pygame.init()#khởi tạo pygame
         #pygame.mixer.init()
         self.screen=pygame.display.set_mode((WIDTH,HEIGHT))
         self.clock=pygame.time.Clock()
