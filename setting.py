@@ -1,0 +1,32 @@
+import pygame
+vector=pygame.math.Vector2
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+DARKGREY = (40, 40, 40)
+LIGHTGREY = (120, 120, 120)
+GREEN = (0, 255, 0)
+RED = (255, 0, 0)
+YELLOW = (255, 255, 0)
+BROWN = (120, 104, 82)
+BLUE = (0, 0, 255)
+
+WIDTH=1024  
+HEIGHT=768
+FPS=60
+TITLE='TANK TROUBLE'
+BGCOLOR=WHITE   
+
+SQSIZE=16 #KÍCH THƯỚC 1 Ô LƯỚI TRONG GAME
+GRIDWIDTH=WIDTH/SQSIZE #SỐ Ô THEO CHIỀU RỘNG
+GRIDHEIGHT=HEIGHT/SQSIZE #SỐ Ô THEO CHIỀU CAO
+
+playerSpeed=200
+
+
+PLAYER_IMAGE='tank1.png'
+ENEMY_IMAGE='tank2.png'
+
+RotationSpeedOfPlayer=120
+
+player_box=pygame.Rect(0,0,25,28)
