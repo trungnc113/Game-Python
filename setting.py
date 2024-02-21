@@ -1,3 +1,4 @@
+from os import path
 import pygame
 vector=pygame.math.Vector2
 
@@ -24,9 +25,24 @@ GRIDHEIGHT=HEIGHT/SQSIZE #SỐ Ô THEO CHIỀU CAO
 playerSpeed=200
 
 
-PLAYER_IMAGE='tank1.png'
-ENEMY_IMAGE='tank2.png'
+PLAYER_IMAGE1='tank1.png'
+PLAYER_IMAGE2='tank2.jpg'
+
 
 RotationSpeedOfPlayer=120
 
 player_box=pygame.Rect(0,0,25,28)
+
+#shooting setting
+BULLET_IMAGE='BULLET.png'
+bulletSpeed=500
+bullet_rate=700
+turret=vector(0,25)
+
+def getImageTank(image):
+    folder_of_game=path.dirname(__file__) #tạo đường dẫn đến thư mục chứa tệp chỉ định
+    image_folder = path.join(folder_of_game, 'img') #kết hợp thành đường dẫn đến thư mục img trong folder chưa tệp đang chạy
+    player_image = pygame.image.load(path.join(image_folder, image)).convert() #kết hợp tạo thành đường dẫn đến file ảnh chuyển đổi hình ảnh thành dạng pixel phù hợp với màn hình
+    player_image=pygame.transform.scale(player_image,(30,30))
+    player_image.set_colorkey(WHITE)
+    return player_image

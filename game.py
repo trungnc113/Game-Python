@@ -13,9 +13,8 @@ class Game:
     def data(self):
         folder_of_game=path.dirname(__file__) #tạo đường dẫn đến thư mục chứa tệp chỉ định
         image_folder = path.join(folder_of_game, 'img') #kết hợp thành đường dẫn đến thư mục img trong folder chưa tệp đang chạy
-        self.player_image = pygame.image.load(path.join(image_folder, PLAYER_IMAGE)).convert() #kết hợp tạo thành đường dẫn đến file ảnh chuyển đổi hình ảnh thành dạng pixel phù hợp với màn hình
-        self.player_image=pygame.transform.scale(self.player_image,(70,70))
-        self.player_image.set_colorkey(WHITE)
+        self.bullet_image=pygame.image.load(path.join(image_folder,BULLET_IMAGE)).convert()
+        self.bullet_image.set_colorkey(WHITE)
     def run(self):
         self.playing=True
         while self.playing:
@@ -23,7 +22,7 @@ class Game:
             self.events()
             self.update()
             self.draw()
-    def draw(self):
+    def draw(self): 
         self.screen.fill(BGCOLOR)
         self.all_sprites.draw(self.screen)
         pygame.display.flip()
@@ -32,7 +31,9 @@ class Game:
         quit()
     def new(self):
         self.all_sprites=pygame.sprite.Group()
-        self.player=Player(self,10,10)
+        self.bullets=pygame.sprite.Group()
+        self.player1=Player1(self,10,10,PLAYER_IMAGE1)
+        self.player2=Player2(self,20,20,PLAYER_IMAGE2)
     def update(self):
         self.all_sprites.update()
     def events(self):
