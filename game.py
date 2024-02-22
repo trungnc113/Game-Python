@@ -29,9 +29,10 @@ class Game:
     def quit(self):
         pygame.quit()
         quit()
-    def new(self):
+    def new(self):  
         self.all_sprites=pygame.sprite.Group()
-        self.bullets=pygame.sprite.Group()
+        self.bullets_player1=pygame.sprite.Group()
+        self.bullets_player2=pygame.sprite.Group()
         self.player1=Player1(self,10,10,PLAYER_IMAGE1)
         self.player2=Player2(self,20,20,PLAYER_IMAGE2)
     def update(self):
