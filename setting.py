@@ -52,10 +52,10 @@ def getImageTank(image,width,height,color):
 def collide(sprite1, sprite2):
     return sprite1.hit_rect.colliderect(sprite2.rect)
 
-def getListImage(image,width,height,color,numbers): #lấy danh sách ảnh của cảnh động
+def getListImage(str_image,width,height,color,numbers): #lấy danh sách ảnh của cảnh động
     list_image=[]
     for i in range(numbers):
-        image=pygame.image.load(path.join(image_folder,image+str(i)+'.png'))
+        image=pygame.image.load(path.join(image_folder,str_image+str(i)+'.png'))
         image=pygame.transform.scale(image,(width,height))
         image.set_colorkey(color)
         list_image.append(image)
